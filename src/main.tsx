@@ -7,6 +7,7 @@ import { analytics, resourceMonitor } from "./lib/analytics";
 import { PostHogProvider } from "posthog-js/react";
 import "./assets/shimmer.css";
 import "./styles.css";
+import "./lib/i18n";
 import AppIcon from "./assets/nfo/asterisk-logo.png";
 
 // Initialize analytics before rendering
