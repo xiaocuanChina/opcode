@@ -73,7 +73,9 @@ export const zhCN = {
     noProjects: "暂无项目",
     projectPath: "项目路径",
     sessions: "会话",
-    lastModified: "最后修改"
+    lastModified: "最后修改",
+    selectProject: "选择项目",
+    projectName: "项目名称"
   },
   agents: {
     title: "CC 代理",
@@ -95,7 +97,12 @@ export const zhCN = {
   },
   settings: {
     title: "设置",
-    general: "常规",
+    description: "配置 Claude Code 首选项",
+    general: "常规设置",
+    advanced: "高级设置",
+    advancedDescription: "高级用户的额外配置选项",
+    rawJson: "原始设置 (JSON)",
+    save: "保存设置",
     appearance: "外观",
     language: "语言",
     claude: "Claude",
@@ -106,7 +113,10 @@ export const zhCN = {
     storage: "存储",
     reset: "重置",
     export: "导出",
-    import: "导入"
+    import: "导入",
+    permissions: "权限",
+    hooks: "钩子",
+    environment: "环境变量"
   },
   usage: {
     title: "用量统计",
@@ -143,6 +153,7 @@ export const zhCN = {
     failedToLoadProjects: "加载项目失败，请确保 ~/.claude 目录存在",
     failedToLoadSessions: "加载会话失败",
     failedToCreateProject: "创建项目失败",
+    failedToLoadSettings: "加载设置失败，请确保 ~/.claude 目录存在",
     claudeNotInstalled: "Claude Code 未安装",
     invalidPath: "路径无效",
     permissionDenied: "权限被拒绝",
@@ -151,7 +162,7 @@ export const zhCN = {
   success: {
     projectCreated: "项目创建成功",
     agentCreated: "代理创建成功",
-    settingsSaved: "设置保存成功",
+    settingsSaved: "设置保存成功！",
     claudePathSaved: "Claude 路径保存成功"
   }
 };

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Plus, 
-  Trash2, 
-  Save, 
+import {
+  Plus,
+  Trash2,
+  Save,
   AlertCircle,
   Loader2,
   Shield,
   Check,
 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -60,6 +61,7 @@ interface EnvironmentVariable {
 export const Settings: React.FC<SettingsProps> = ({
   className,
 }) => {
+  const { t } = useTranslation();
   const [settings, setSettings] = useState<ClaudeSettings | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -183,7 +185,7 @@ export const Settings: React.FC<SettingsProps> = ({
       }
     } catch (err) {
       console.error("Failed to load settings:", err);
-      setError("Failed to load settings. Please ensure ~/.claude directory exists.");
+      setError(t('errors.failedToLoadSettings'));
       setSettings({});
     } finally {
       setLoading(false);
@@ -237,7 +239,7 @@ export const Settings: React.FC<SettingsProps> = ({
         setProxySettingsChanged(false);
       }
 
-      setToast({ message: "Settings saved successfully!", type: "success" });
+      setToast({ message: t('success.settingsSaved'), type: "success" });
     } catch (err) {
       console.error("Failed to save settings:", err);
       setError("Failed to save settings.");
@@ -339,9 +341,9 @@ export const Settings: React.FC<SettingsProps> = ({
         <div className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-heading-1">Settings</h1>
+              <h1 className="text-heading-1">{t('settings.title')}</h1>
               <p className="mt-1 text-body-small text-muted-foreground">
-                Configure Claude Code preferences
+                {t('settings.description')}
               </p>
             </div>
             <motion.div
@@ -361,7 +363,7 @@ export const Settings: React.FC<SettingsProps> = ({
                 ) : (
                   <>
                     <Save className="mr-2 h-4 w-4" />
-                    Save Settings
+                    {t('common.save')}
                   </>
                 )}
               </Button>
@@ -408,7 +410,7 @@ export const Settings: React.FC<SettingsProps> = ({
             <TabsContent value="general" className="space-y-6 mt-6">
               <Card className="p-6 space-y-6">
                 <div>
-                  <h3 className="text-heading-4 mb-4">General Settings</h3>
+                  <h3 className="text-heading-4 mb-4">{t('settings.general')}</h3>
                   
                   <div className="space-y-4">
                     {/* Theme Selector */}
@@ -974,9 +976,9 @@ export const Settings: React.FC<SettingsProps> = ({
               <Card className="p-6">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-base font-semibold mb-4">Advanced Settings</h3>
+                    <h3 className="text-base font-semibold mb-4">{t('settings.advanced')}</h3>
                     <p className="text-sm text-muted-foreground mb-6">
-                      Additional configuration options for advanced users
+                      {t('settings.advancedDescription')}
                     </p>
                   </div>
                   
@@ -996,7 +998,7 @@ export const Settings: React.FC<SettingsProps> = ({
                   
                   {/* Raw JSON Editor */}
                   <div className="space-y-2">
-                    <Label>Raw Settings (JSON)</Label>
+                    <Label>{t('settings.rawJson')}</Label>
                     <div className="p-3 rounded-md bg-muted font-mono text-xs overflow-x-auto whitespace-pre-wrap">
                       <pre>{JSON.stringify(settings, null, 2)}</pre>
                     </div>

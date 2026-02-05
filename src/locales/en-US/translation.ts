@@ -73,7 +73,9 @@ export const enUS = {
     noProjects: "No projects yet",
     projectPath: "Project Path",
     sessions: "Sessions",
-    lastModified: "Last Modified"
+    lastModified: "Last Modified",
+    selectProject: "Select Project",
+    projectName: "Project Name"
   },
   agents: {
     title: "CC Agents",
@@ -95,7 +97,12 @@ export const enUS = {
   },
   settings: {
     title: "Settings",
-    general: "General",
+    description: "Configure Claude Code preferences",
+    general: "General Settings",
+    advanced: "Advanced Settings",
+    advancedDescription: "Additional configuration options for advanced users",
+    rawJson: "Raw Settings (JSON)",
+    save: "Save Settings",
     appearance: "Appearance",
     language: "Language",
     claude: "Claude",
@@ -106,7 +113,10 @@ export const enUS = {
     storage: "Storage",
     reset: "Reset",
     export: "Export",
-    import: "Import"
+    import: "Import",
+    permissions: "Permissions",
+    hooks: "Hooks",
+    environment: "Environment Variables"
   },
   usage: {
     title: "Usage Analytics",
@@ -143,6 +153,7 @@ export const enUS = {
     failedToLoadProjects: "Failed to load projects. Please ensure ~/.claude directory exists",
     failedToLoadSessions: "Failed to load sessions for this project",
     failedToCreateProject: "Failed to create project for the selected directory",
+    failedToLoadSettings: "Failed to load settings. Please ensure ~/.claude directory exists",
     claudeNotInstalled: "Claude Code is not installed",
     invalidPath: "Invalid path",
     permissionDenied: "Permission denied",
@@ -151,7 +162,7 @@ export const enUS = {
   success: {
     projectCreated: "Project created successfully",
     agentCreated: "Agent created successfully",
-    settingsSaved: "Settings saved successfully",
+    settingsSaved: "Settings saved successfully!",
     claudePathSaved: "Claude binary path saved successfully"
   }
 };

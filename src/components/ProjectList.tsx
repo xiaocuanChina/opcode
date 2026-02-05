@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
+import {
   FolderOpen,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { Project } from "@/lib/api";
@@ -89,6 +90,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({
   onOpenProject,
   className,
 }) => {
+  const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   
@@ -133,7 +135,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({
                 className="flex items-center gap-2"
               >
                 <FolderOpen className="h-4 w-4" />
-                Open Project
+                {t('projects.openProject')}
               </Button>
             </motion.div>
           </div>
